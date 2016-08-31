@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Ensure that `mkvirtualenv` is in PATH
+source $HOME/.bash_profile
+
+mkvirtualenv -p python3 -r requirements.txt wisdom
