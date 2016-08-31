@@ -1,1 +1,2 @@
 -r wisdom/requirements.txt
+ansible==2.1.1.0

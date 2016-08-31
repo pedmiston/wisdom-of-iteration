@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
-# Ensure that `mkvirtualenv` is in PATH
+# Create a new python virtualenv
 source $HOME/.bash_profile
-
 mkvirtualenv -p python3 -r requirements.txt wisdom
+
+# Update pip
+workon wisdom
+pip install --upgrade pip
+deactivate
+
+# Install vagrant with homebrew
+brew cask install vagrant
