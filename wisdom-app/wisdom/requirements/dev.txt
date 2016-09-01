@@ -1,2 +1,3 @@
 -r base.txt
 ipython==5.1.0
+selenium==2.53.6
