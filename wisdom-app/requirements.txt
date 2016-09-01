@@ -1,2 +1,2 @@
--r wisdom/requirements.txt
+-r wisdom/requirements/dev.txt
 ansible==2.1.1.0
