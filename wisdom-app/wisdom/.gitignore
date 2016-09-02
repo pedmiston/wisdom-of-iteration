@@ -1,5 +1,8 @@
 # python
 __pycache__/
 
+# django
+*.sqlite3
+
 # OS files
 .DS_Store
