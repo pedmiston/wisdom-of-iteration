@@ -16,7 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+import home.views as home
+import anchoring.views as anchoring
+
 urlpatterns = [
-    url(r'^', include('home.urls')),
+    url(r'^$', home.home, name='home'),
+    url(r'^anchoring/', anchoring.home, name='anchoring'),
     url(r'^admin/', admin.site.urls),
 ]
