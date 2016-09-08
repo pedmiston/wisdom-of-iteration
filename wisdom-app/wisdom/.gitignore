@@ -4,5 +4,8 @@ __pycache__/
 # django
 *.sqlite3
 
+# testing
+ghostdriver.log
+
 # OS files
 .DS_Store

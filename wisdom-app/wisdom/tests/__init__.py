@@ -5,7 +5,7 @@ class SeleniumTest(LiveServerTestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.browser = webdriver.Firefox()
+        cls.browser = webdriver.PhantomJS()
         super().setUpClass()
 
     @classmethod
