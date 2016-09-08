@@ -2,4 +2,5 @@ from django.db import models
 
 
 class Experiment(models.Model):
-    pass
+    class Meta:
+        abstract = True
