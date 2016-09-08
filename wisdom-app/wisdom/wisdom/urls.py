@@ -21,6 +21,6 @@ import anchoring.views as anchoring
 
 urlpatterns = [
     url(r'^$', home.home, name='home'),
-    url(r'^anchoring/', anchoring.home, name='anchoring'),
+    url(r'^anchoring/', include('anchoring.urls', 'anchoring')),
     url(r'^admin/', admin.site.urls),
 ]
