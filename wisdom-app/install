@@ -9,5 +9,5 @@ workon wisdom
 pip install --upgrade pip
 deactivate
 
-# Install vagrant with homebrew
-brew cask install vagrant
+# Install homebrew cask apps
+brew cask install virtualbox vagrant
