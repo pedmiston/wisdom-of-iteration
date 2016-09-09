@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import CreateView
 
+from experiment.views import ExperimentList
+from .models import AnchoringExperiment
 from .forms import NewGameForm
 
 
-def home(request):
-    return render(request, 'anchoring/home.html')
+class Home(ExperimentList):
+    template_name = 'anchoring/home.html'
+    model = AnchoringExperiment
 
 
 class NewGame(CreateView):
