@@ -15,9 +15,9 @@ class AnchoringExperimentTest(SeleniumTest):
         experiment_name = 'test-anchoring-experiment'
         question_text = 'how many stars in the sky'
         form = self.browser.find_element_by_tag_name('form')
-        form.find_element_by_id('id_experiment_name').send_keys(experiment_name)
-        form.find_element_by_id('id_question_text').send_keys(question_text)
-        form.find_element_by_id('id_submit').click()
+        form.find_element_by_id('id_name').send_keys(experiment_name)
+        form.find_element_by_id('id_text').send_keys(question_text)
+        form.find_element_by_name('submit').click()
 
         # Verify new experiment
         experiments = (self.browser.find_element_by_id('id_experiment_list')
