@@ -3,5 +3,11 @@
 {% block body %}
 <div class="container">
   <a id="id_new" href="{% url 'anchoring:new' %}">New Anchoring Experiment</a>
+
+  <ul id="id_experiment_list" class="list-group">
+  {% for experiment in anchoringexperiment_list %}
+      <li class="list-group-item">{{ experiment.name }}</li>
+  {% endfor %}
+  </ul>
 </div>
 {% endblock body %}
