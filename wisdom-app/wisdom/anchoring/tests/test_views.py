@@ -31,3 +31,10 @@ class AnchoringTest(TestCase):
         response = self.client.get(self.url_new)
         form = response.context['form']
         self.assertIsInstance(form, NewGameForm)
+
+    def test_creating_a_new_game_redirects_to_home_page(self):
+        fake = mommy.prepare(AnchoringExperiment)
+        required_fields = NewGameForm.Meta.fields
+        data = {field: getattr(fake, field) for field in required_fields}
+        response = self.client.post(self.url_new, data)
+        self.assertRedirects(response, '/anchoring/')

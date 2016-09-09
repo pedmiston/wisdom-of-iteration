@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import CreateView
 
 from experiment.views import ExperimentList
@@ -12,5 +13,8 @@ class Home(ExperimentList):
 
 
 class NewGame(CreateView):
-    form_class = NewGameForm
     template_name = 'anchoring/new.html'
+    form_class = NewGameForm
+
+    def get_success_url(self):
+        return reverse('anchoring:home')
