@@ -1,3 +1,7 @@
 ---
 
-project_root: "/apps/wisdom"
+project_name: wisdom-app
+app_name: wisdom
+
+venv_path: "/apps/{{ project_name }}"
+app_path: "{{ venv_path }}/{{ app_name }}"

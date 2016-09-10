@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.synced_folder "wisdom", "/apps/wisdom"
+  config.vm.synced_folder "wisdom", "/apps/wisdom-app/wisdom"
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "vagrant.yml"
   end

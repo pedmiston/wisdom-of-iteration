@@ -1,0 +1,20 @@
+---
+
+- include: vagrant.yml
+
+- name: Run tasks on live server
+  hosts: localhost
+  vars:
+    -
+  tasks:
+    - name: Get local venv path from virtualenvwrapper
+      local_action: command echo $WORKON_HOME/wisdom
+      register: local_venv
+
+    - debug: var=local_venv
+
+    - name: Run functional tests on live server
+      django_manage:
+        command: test --liveserver
+        app_path: './wisdom'
+        virtualenv_path: local_venv
