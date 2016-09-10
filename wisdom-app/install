@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
-# Create a new python virtualenv
-source $HOME/.bash_profile
-mkvirtualenv -p python3 -r requirements.txt wisdom
+# Create two new python virtualenvs.
+# The app is built in python3, but we need python2 for ansible.
+source $HOME/.bash_profile  # ensure virtualenvwrapper commands are on PATH
+mkvirtualenv --python=python3 wisdom -r wisdom/requirements/dev.txt
+mkvirtualenv --python=python2 deploy -r requirements.txt
 
-# Update pip
+# Update pip3 and pip2
 workon wisdom
+pip install --upgrade pip
+deactivate
+
+workon deploy
 pip install --upgrade pip
 deactivate
 
