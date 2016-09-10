@@ -1,0 +1,12 @@
+---
+
+- name: Provision a Digital Ocean server if it doesn't exist
+  hosts: localhost
+
+
+- name: Deploy to Digital Ocean server
+  hosts: digitalocean
+  vars:
+    - vars/main.yml
+  roles:
+    - base
