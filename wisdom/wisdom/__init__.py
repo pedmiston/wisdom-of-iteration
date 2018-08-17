@@ -1,0 +1,1 @@
+from .wisdom import app
